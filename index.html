@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deployment Certificate - Humbu Wandeme Trading Enterprise</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #1a2a6c;
+            --secondary: #b21f1f;
+            --accent: #fdbb2d;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .certificate-container {
+            width: 100%;
+            max-width: 1000px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .certificate-header {
+            background: linear-gradient(to right, var(--primary), var(--dark));
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .certificate-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .certificate-header h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        
+        .business-info {
+            background: var(--light);
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        
+        .business-info div {
+            display: flex;
+            align-items: center;
+            margin: 5px 10px;
+        }
+        
+        .business-info i {
+            margin-right: 8px;
+            color: var(--primary);
+        }
+        
+        .certificate-body {
+            padding: 40px;
+        }
+        
+        .certificate-border {
+            border: 3px double var(--primary);
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .project-details {
+            margin-bottom: 30px;
+        }
+        
+        .project-details h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #f1f1f1;
+            padding-bottom: 10px;
+        }
+        
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .detail-value {
+            color: #34495e;
+            padding: 8px 12px;
+            background: var(--light);
+            border-radius: 5px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .status-ready {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-security {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .tech-specs {
+            margin-bottom: 30px;
+        }
+        
+        .tech-specs h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #f1f1f1;
+            padding-bottom: 10px;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .spec-item {
+            padding: 12px;
+            background: var(--light);
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .spec-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .spec-value {
+            color: var(--primary);
+        }
+        
+        .endpoints {
+            margin-bottom: 30px;
+        }
+        
+        .endpoints h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #f1f1f1;
+            padding-bottom: 10px;
+        }
+        
+        .endpoint-list {
+            list-style-type: none;
+        }
+        
+        .endpoint-item {
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            background: var(--light);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .endpoint-item:before {
+            content: "✅";
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .milestones {
+            margin-bottom: 30px;
+        }
+        
+        .milestones h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #f1f1f1;
+            padding-bottom: 10px;
+        }
+        
+        .milestone-list {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+        }
+        
+        .milestone-item {
+            padding: 10px 15px;
+            background: var(--light);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .milestone-item:before {
+            content: "✓";
+            margin-right: 10px;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #f1f1f1;
+        }
+        
+        .signature {
+            text-align: center;
+            width: 45%;
+        }
+        
+        .signature-line {
+            margin-top: 60px;
+            border-top: 1px solid var(--dark);
+            width: 100%;
+        }
+        
+        .signature-name {
+            margin-top: 10px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .signature-title {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+        
+        .certificate-footer {
+            background: var(--light);
+            padding: 20px;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .qr-code {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .qr-placeholder {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            background: #f1f1f1;
+            border: 1px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7f8c8d;
+            font-size: 0.8rem;
+        }
+        
+        .business-logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .certificate-body {
+                padding: 20px;
+            }
+            
+            .detail-grid, .specs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .signatures {
+                flex-direction: column;
+            }
+            
+            .signature {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            
+            .business-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate-container">
+        <div class="certificate-header">
+            <div class="business-logo">H W T E</div>
+            <h1>🎓 DEPLOYMENT CERTIFICATE</h1>
+            <h2>Humbu Wandeme Trading Enterprise</h2>
+        </div>
+        
+        <div class="business-info">
+            <div><i class="fas fa-globe"></i> www.humbu.store</div>
+            <div><i class="fas fa-envelope"></i> humbulani@humbu.store</div>
+            <div><i class="fas fa-phone"></i> 079 465 8481</div>
+            <div><i class="fas fa-map-marker-alt"></i> Thohoyandou, Limpopo 0950</div>
+        </div>
+        
+        <div class="certificate-body">
+            <div class="certificate-border">
+                <div class="project-details">
+                    <h3>Project Details</h3>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">Business Name</span>
+                            <span class="detail-value">Humbu Wandeme Trading Enterprise</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Developer</span>
+                            <span class="detail-value">Humbulani Wandeme</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Deployment Date</span>
+                            <span class="detail-value" id="currentDate">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Business Website</span>
+                            <span class="detail-value">https://humbu.store</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">GitHub Repository</span>
+                            <span class="detail-value">https://github.com/Humbulan/fastapi-mobile-app</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Status</span>
+                            <span class="status-badge status-ready">✅ PRODUCTION READY</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Security</span>
+                            <span class="status-badge status-security">🔐 HTTPS/SSL ENABLED</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-specs">
+                    <h3>Technical Specifications</h3>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <div class="spec-label">Framework</div>
+                            <div class="spec-value">FastAPI (Python)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Frontend</div>
+                            <div class="spec-value">HTML5, CSS3, JavaScript</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Mobile</div>
+                            <div class="spec-value">Progressive Web App (PWA)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Deployment</div>
+                            <div class="spec-value">Render.com</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Security</div>
+                            <div class="spec-value">HTTPS/SSL Enabled</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Domain</div>
+                            <div class="spec-value">humbu.store</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ssl-info">
+                    <h3>SSL Certificate Information</h3>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">Issuer</span>
+                            <span class="detail-value">Google Trust Services</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Valid From</span>
+                            <span class="detail-value">October 31, 2025</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Valid Until</span>
+                            <span class="detail-value">January 29, 2026</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Encryption</span>
+                            <span class="detail-value">ECDSA with SHA256</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Certificate File</span>
+                            <span class="detail-value">humbu_store_certificate.pem</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="endpoints">
+                    <h3>API Endpoints Deployed</h3>
+                    <ul class="endpoint-list">
+                        <li class="endpoint-item">/ - Home Page</li>
+                        <li class="endpoint-item">/health - Health Check</li>
+                        <li class="endpoint-item">/api/square/{number} - Square Calculator</li>
+                        <li class="endpoint-item">/api/reverse/{text} - Text Reverser</li>
+                        <li class="endpoint-item">/api/auth/test - Authentication Test</li>
+                    </ul>
+                </div>
+                
+                <div class="milestones">
+                    <h3>Project Milestones Achieved</h3>
+                    <ul class="milestone-list">
+                        <li class="milestone-item">Business Requirements Analysis</li>
+                        <li class="milestone-item">FastAPI Backend Development</li>
+                        <li class="milestone-item">Mobile-Responsive Frontend</li>
+                        <li class="milestone-item">GitHub Repository Setup</li>
+                        <li class="milestone-item">Production Deployment</li>
+                        <li class="milestone-item">Custom Domain Configuration</li>
+                        <li class="milestone-item">SSL Certificate Installation</li>
+                        <li class="milestone-item">Mobile PWA Optimization</li>
+                        <li class="milestone-item">Business Integration Testing</li>
+                        <li class="milestone-item">Performance Optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="qr-code">
+                    <div class="qr-placeholder">
+                        QR Code<br>humbu.store
+                    </div>
+                </div>
+                
+                <div class="signatures">
+                    <div class="signature">
+                        <div class="signature-line"></div>
+                        <div class="signature-name">Humbulani Wandeme</div>
+                        <div class="signature-title">Business Owner & Developer</div>
+                    </div>
+                    <div class="signature">
+                        <div class="signature-line"></div>
+                        <div class="signature-name" id="systemDate">System Generated</div>
+                        <div class="signature-title">Deployment Verification</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="certificate-footer">
+            <p>This certificate verifies the successful development and deployment of a production-ready FastAPI mobile web application for Humbu Wandeme Trading Enterprise.</p>
+        </div>
+    </div>
+
+    <script>
+        // Set current date
+        const now = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', options);
+        document.getElementById('systemDate').textContent = now.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' });
+        
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const certificate = document.querySelector('.certificate-container');
+            
+            certificate.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.01)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            certificate.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
