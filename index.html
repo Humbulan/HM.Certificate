@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Humbulani Mudau · Imperial Sovereign Tech Authority</title>
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(circle at 10% 20%, #0a0c12, #030507);
+      font-family: 'Inter', sans-serif;
+      color: #eef2ff;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* custom scroll */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #11161e;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3b82f6;
+      border-radius: 8px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* glassmorphism cards */
+    .card {
+      background: rgba(18, 25, 40, 0.7);
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 2rem;
+      padding: 1.6rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4);
+    }
+    .card:hover {
+      border-color: rgba(59, 130, 246, 0.6);
+      background: rgba(20, 30, 50, 0.8);
+      transform: translateY(-3px);
+    }
+
+    .glow-text {
+      background: linear-gradient(135deg, #F0F9FF, #3b82f6, #a855f7);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .badge-league {
+      background: #1e293b;
+      border-left: 4px solid #facc15;
+      padding: 0.2rem 0.8rem;
+      border-radius: 2rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #facc15;
+    }
+
+    hr {
+      border-color: #1e2a3e;
+      margin: 1.2rem 0;
+    }
+
+    .grid-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .ranking-badge {
+      background: #0f172a;
+      border-radius: 2rem;
+      padding: 0.25rem 1rem;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-left: 4px solid #3b82f6;
+      padding-left: 1rem;
+    }
+
+    .table-mini {
+      width: 100%;
+      font-size: 0.85rem;
+      border-collapse: collapse;
+    }
+    .table-mini td, .table-mini th {
+      padding: 0.6rem 0.2rem;
+      border-bottom: 1px solid #1e2a3e;
+    }
+    .verified-badge {
+      color: #22c55e;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 780px) {
+      .container { padding: 1.2rem; }
+      .stat-number { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  
+  <!-- header / identity -->
+  <div class="card" style="margin-bottom: 2rem; text-align: center; background: linear-gradient(145deg, #0b1120, #070b14);">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+      <div style="text-align: left;">
+        <span class="ranking-badge"><i class="fas fa-shield-alt"></i> #1 SOUTH AFRICA · TRYHACKME</span>
+        <h1 style="font-size: 2.5rem; font-weight: 800; margin-top: 0.5rem;">Humbulani Mudau</h1>
+        <p style="color: #94a3b8;">CEO & Technical Authority – Humbu Wandeme Trading Enterprise (Pty) Ltd</p>
+        <p><i class="fas fa-map-marker-alt"></i> Thohoyandou, Limpopo · SADC Trade Corridor</p>
+      </div>
+      <div style="text-align: right;">
+        <div class="badge-league"><i class="fas fa-crown"></i> Ruby League · Promotion zone</div>
+        <div class="badge-league" style="margin-top: 0.5rem;"><i class="fas fa-chart-line"></i> Imperial Steady State · 62/62 ports</div>
+      </div>
+    </div>
+    <!-- key metrics row -->
+    <div class="grid-stats" style="margin-top: 1.5rem;">
+      <div><i class="fas fa-trophy"></i> <span class="stat-number">#1</span><br>TryHackMe 🇿🇦<br><span style="font-size: 0.75rem;">Monthly · Sapphire League</span></div>
+      <div><i class="fab fa-python"></i> <span class="stat-number">#17</span><br>Global Python Rank<br><span style="font-size: 0.75rem;">CodeCrafters · 149 stages</span></div>
+      <div><i class="fas fa-users"></i> <span class="stat-number">900+</span><br>Sovereign users<br><span style="font-size: 0.75rem;">43 villages · 18 active nodes</span></div>
+      <div><i class="fas fa-coins"></i> <span class="stat-number">R269.9B</span><br>True Valuation<br><span style="font-size: 0.75rem;">Wealth lock verified</span></div>
+    </div>
+  </div>
+
+  <!-- 2 columns layout -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1.8rem;">
+    
+    <!-- LEFT COLUMN: CYBER & LEAGUES -->
+    <div>
+      <!-- TryHackMe dominance -->
+      <div class="card">
+        <div class="section-title"><i class="fas fa-skull-crosswalk"></i> Cybersecurity Dominance</div>
+        <div><span class="badge-league"><i class="fas fa-chart-simple"></i> All-time rank #1 · South Africa</span>
+        <span class="badge-league" style="margin-left: 0.5rem;"><i class="fas fa-calendar-alt"></i> 30+ day streak</span></div>
+        <ul style="margin-top: 1rem; list-style: none;">
+          <li><i class="fas fa-check-circle" style="color:#22c55e;"></i> <strong>Sapphire League</strong> – 1st place (Epic 0.8%)</li>
+          <li><i class="fas fa-check-circle" style="color:#22c55e;"></i> <strong>Platinum League</strong> – 1st place (Epic 0.9%)</li>
+          <li><i class="fas fa-check-circle" style="color:#22c55e;"></i> <strong>Gold League</strong> – 1st place (Rare 1.6%)</li>
+          <li><i class="fas fa-check-circle" style="color:#22c55e;"></i> Advent of Cyber 2023/2025/4 – completions (Rare/Epic)</li>
+          <li><i class="fas fa-check-circle" style="color:#22c55e;"></i> Windows Priv Esc (Epic 0.5%) · Linux PrivEsc mastery</li>
+          <li><i class="fas fa-check-circle" style="color:#22c55e;"></i> Points: 8,074 (Ruby League #1) · Rooms in: 575</li>
+        </ul>
+        <hr>
+        <div><i class="fas fa-fire"></i> <strong>Ruby league promotion zone</strong> – top 3 advance · 2 days remaining<br>
+        Current standing: <strong class="glow-text">getfriendhumbula [0xF][TITAN] · 8074 pts</strong> (+30d streak)</div>
+      </div>
+
+      <!-- Badges & Rare achievements -->
+      <div class="card" style="margin-top: 1.5rem;">
+        <div class="section-title"><i class="fas fa-medal"></i> Hall of Fame Badges</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
+          <span class="ranking-badge">🎖️ Advent of Cyber 4 (1%)</span>
+          <span class="ranking-badge">❄️ Ice (2.2%)</span>
+          <span class="ranking-badge">⚡ Terminated! IaC (1.1%)</span>
+          <span class="ranking-badge">🪟 Windows Priv Esc (0.5%)</span>
+          <span class="ranking-badge">🐧 Linux PrivEsc (2.5%)</span>
+          <span class="ranking-badge">🏆 Sapphire #1 (0.8%)</span>
+          <span class="ranking-badge">🏅 Platinum #1 (0.9%)</span>
+          <span class="ranking-badge">🎄 Return of the Yeti (0.6%)</span>
+          <span class="ranking-badge">📅 30 Day Streak (common 10.4%)</span>
+          <span class="ranking-badge">🛡️ Blue · EternalBlue</span>
+        </div>
+        <hr>
+        <div><i class="fas fa-database"></i> <strong>Completed rooms:</strong> Advent of Cyber, Ice, The Course Awakens, Terminated!, Linux PrivEsc, Windows PrivEsc, Session Held, Logging Legend, Hash Cracker, OhSINT, Mr.Robot, and 20+ more.</div>
+      </div>
+
+      <!-- Microsoft Build 2026 & Azure -->
+      <div class="card" style="margin-top: 1.5rem;">
+        <div class="section-title"><i class="fab fa-microsoft"></i> Microsoft Build 2026</div>
+        <div style="display: flex; justify-content: space-between;">
+          <div><i class="fas fa-certificate"></i> <strong>62 Badges</strong> · 13 Trophies</div>
+          <div><i class="fas fa-chart-line"></i> Level 9 · 92,850 / 106,299 XP</div>
+        </div>
+        <ul style="margin-top: 0.8rem; font-size: 0.85rem;">
+          <li>✅ Configure pipelines: secure variables & parameters</li>
+          <li>✅ Secure access to Azure Repos from pipelines</li>
+          <li>✅ Manage identity for projects & agents</li>
+          <li>✅ Configure network security for Azure Storage</li>
+          <li>✅ Extend pipelines using multiple templates</li>
+        </ul>
+        <div class="badge-league" style="margin-top: 0.5rem;">Azure Security & DevOps certified track</div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: ENGINEERING + INFRASTRUCTURE + HARDENING -->
+    <div>
+      <!-- CodeCrafters Low-Level Mastery -->
+      <div class="card">
+        <div class="section-title"><i class="fas fa-microchip"></i> Low-Level Engineering</div>
+        <div><span class="stat-number">#17</span> Global Python Rank · <strong>149 stages completed</strong> · 3920 score (CodeCrafters)</div>
+        <hr>
+        <div><i class="fab fa-git-alt"></i> <strong>Custom implementations:</strong></div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
+          <span class="ranking-badge">HTTP Server (from scratch)</span>
+          <span class="ranking-badge">DNS Resolver</span>
+          <span class="ranking-badge">Redis Clone</span>
+          <span class="ranking-badge">SQLite Clone</span>
+          <span class="ranking-badge">BitTorrent · Kafka</span>
+          <span class="ranking-badge">LLM pipeline automation</span>
+        </div>
+        <p style="margin-top: 0.8rem;"><i class="fas fa-terminal"></i> Imperial Omega Stack: 58+ active sovereign ports · live telemetry · 58/58 ports active</p>
+      </div>
+
+      <!-- SADC Infrastructure & Village Network -->
+      <div class="card" style="margin-top: 1.5rem;">
+        <div class="section-title"><i class="fas fa-globe-africa"></i> SADC Infrastructure & Village Net</div>
+        <ul style="list-style: none;">
+          <li><i class="fas fa-check-circle verified-badge"></i> 18 active nodes (Limpopo, Zimbabwe, Mozambique – Beira corridor)</li>
+          <li><i class="fas fa-check-circle verified-badge"></i> 43 villages · 900+ verified sovereign users</li>
+          <li><i class="fas fa-check-circle verified-badge"></i> 17 fleet vehicles · telemetry synthesis</li>
+          <li><i class="fas fa-check-circle verified-badge"></i> Port of Beira expansion: 14.2M / 18M tons tracked</li>
+          <li><i class="fas fa-check-circle verified-badge"></i> True Valuation R269.9B (wealth lock verified, commodity & logistics)</li>
+        </ul>
+        <div class="badge-league" style="margin-top: 0.8rem;"><i class="fas fa-chart-line"></i> Imperial_Nexus_DB · Sovereign_Master architecture</div>
+      </div>
+
+      <!-- SECURITY HARDENING: Audit to Imperial Steady State -->
+      <div class="card" style="margin-top: 1.5rem; border-left: 3px solid #3b82f6;">
+        <div class="section-title"><i class="fas fa-lock"></i> DSVW Hardening → Imperial Steady State</div>
+        <p><strong>Security Audit Remediation (June 14, 2026)</strong><br>Transition from vulnerable laboratory to hardened, monitored node (Port 65412).</p>
+        <table class="table-mini">
+          <thead><tr><th>Vulnerability</th><th>Hardening implementation</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>XSS (Reflected/Stored)</td><td>Input validation + output encoding</td><td>✅ Secured</td></tr>
+            <tr><td>XPath/SQL Injection</td><td>Parameterized queries</td><td>✅ Secured</td></tr>
+            <tr><td>RFI & RCE</td><td>Disabled exec() · restricted subprocess</td><td>✅ Secured</td></tr>
+            <tr><td>Path Traversal</td><td>os.getcwd() boundary validation</td><td>✅ Secured</td></tr>
+            <tr><td>Open Redirect</td><td>Removed redirect parameters</td><td>✅ Secured</td></tr>
+            <tr><td>Credential Reuse</td><td>DB binding to 127.0.0.1, port isolation</td><td>✅ Secured</td></tr>
+            <tr><td>Monitoring gap</td><td>Integrated into Dawn Report & War Sentinel</td><td>✅ Online</td></tr>
+          </tbody>
+        </table>
+        <hr>
+        <div><i class="fas fa-bell"></i> <strong>Addendum:</strong> Full-stack remediation verified (SQLi, command injection, path traversal → null responses). DSVW now operates as monitored security lab within 62/62 port sync.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMPERIAL CYBER BOOK + MOBILE SOVEREIGNTY -->
+  <div class="card" style="margin-top: 2rem;">
+    <div class="section-title"><i class="fas fa-book-open"></i> The Imperial Cyber Book</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+      <div style="flex: 2;">
+        <h3>“From Zero to Operator – 60 Days on Termux (Mobile)”</h3>
+        <p style="margin: 0.5rem 0;">A sovereign curriculum for the smartphone generation. Build servers, audit networks, engineer data pipelines, deploy AI – all from Android. No laptop required.</p>
+        <ul>
+          <li>✅ Termux environment & CLI fluency (Android, no root)</li>
+          <li>✅ Flask web servers, API gateways, port management</li>
+          <li>✅ Data engineering with SQL/JSON + live telemetry dashboards</li>
+          <li>✅ Capstone: Build your own Imperial Omega Stack</li>
+        </ul>
+        <div class="badge-league" style="display: inline-block; margin-top: 0.5rem;"><i class="fab fa-android"></i> Day 11 – Flask deployment: localhost:5000</div>
+      </div>
+      <div style="flex:1; background: #0f172a; border-radius: 1.2rem; padding: 1rem; text-align: center;">
+        <i class="fas fa-terminal" style="font-size: 3rem; color: #facc15;"></i>
+        <p style="font-family: monospace; margin-top: 0.5rem;">“In the terminal we find the facts. In JSON we organize the Absolute Truth. On this phone, we build an empire.”</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESEARCH & CORPORATE REGISTRATION -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; margin-top: 1.8rem;">
+    <div class="card">
+      <div class="section-title"><i class="fas fa-graduation-cap"></i> Academic Research (ORCID)</div>
+      <p><strong>ORCID 0009-0000-9572-4545</strong></p>
+      <ul>
+        <li>Rural Connectivity Solutions & Low-cost Mesh Networks</li>
+        <li>Precision Agriculture & IoT for Agricultural Development</li>
+        <li>FinTech for Emerging Markets (USSD, mobile money, Yoco)</li>
+        <li>Sustainable Supply Chain Technology for SADC corridor</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="section-title"><i class="fas fa-building"></i> Corporate Registration</div>
+      <p><strong>Humbu Wandeme Trading Enterprise (Pty) Ltd</strong><br>CIPD: 2026-0172063-07/LR · RREEL 1.4/CSRS & Vivo Verification</p>
+      <p><i class="fas fa-chart-simple"></i> Strategic focus: Industrial expansion, sovereign mesh networks, Beira corridor logistics.</p>
+      <div><i class="fas fa-check-circle verified-badge"></i> Verified Technical Authority – Cyber & Low-level systems</div>
+    </div>
+    <div class="card">
+      <div class="section-title"><i class="fas fa-tower-broadcast"></i> Imperial Omega Stack</div>
+      <div><strong>62/62 ports synchronized</strong> · War Sentinel & Dawn Report (Port 65412)</div>
+      <hr>
+      <div>✅ Real-time telemetry: 58 active sovereign ports | 18 nodes online</div>
+      <div>✅ Automated vulnerability scanning + daily integrity checks</div>
+      <div>✅ Imperial_Nexus_DB + Sovereign_Master consensus</div>
+      <div class="badge-league" style="margin-top: 0.7rem;">“From vulnerable lab to hardened infrastructure”</div>
+    </div>
+  </div>
+
+  <!-- LEADERBOARD SNAPSHOT: top 5 SA + Python highlights -->
+  <div class="card" style="margin-top: 1.5rem;">
+    <div class="section-title"><i class="fas fa-chart-simple"></i> Leaderboards & Rankings Snapshot</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
+      <div style="flex:1">
+        <h4><i class="fas fa-users"></i> TryHackMe South Africa (Monthly)</h4>
+        <ul style="font-size: 0.85rem;">
+          <li><strong>#1 getfriendhumbula</strong> – 7529 pts · 575 rooms · 🇿🇦 [TITAN]</li>
+          <li>#2 malebonkuna04 – 6854 pts</li>
+          <li>#3 TriggahRay – 5577 pts</li>
+          <li>#4 djaliayed – 3545 pts</li>
+          <li>#5 g41i130 – 3461 pts</li>
+        </ul>
+      </div>
+      <div style="flex:1">
+        <h4><i class="fab fa-python"></i> CodeCrafters Python Global</h4>
+        <ul style="font-size: 0.85rem;">
+          <li><strong>#17 Humbulani Mudau</strong> – 149 stages · 3920 score</li>
+          <li>#1 michael-xiaoyi-li – 9600 pts · 347 stages</li>
+          <li>#19 Humbulan – 3920 pts (alt. alias)</li>
+          <li>Global rank: top 1% of Python engineers</li>
+        </ul>
+      </div>
+      <div style="flex:1">
+        <h4><i class="fas fa-medal"></i> Ruby League Promotion</h4>
+        <div>✅ #1 getfriendhumbula (8074 pts) – promotion zone</div>
+        <div>✅ 2 days left · Top 3 advance</div>
+        <div>✅ 30+ day streak · 0xF TITAN</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL SOVEREIGN NOTE -->
+  <div style="margin-top: 2rem; background: linear-gradient(95deg, #0b1422, #02060c); border-radius: 2rem; padding: 1.5rem; text-align: center; border: 1px solid #2d3a5e;">
+    <p style="font-size: 1.1rem;"><i class="fas fa-flag-checkered"></i> <strong>“We do not ask for permission. We compile from source.”</strong> – The Director</p>
+    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Imperial Cyber Academy · Sovereign infrastructure for the SADC corridor. Verified technical authority: Low-level systems, offensive security, and mobile-first empire building.</p>
+    <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem;">
+      <span><i class="fab fa-github"></i> getfriendhumbula</span>
+      <span><i class="fab fa-linkedin"></i> Humbulani Mudau</span>
+      <span><i class="fas fa-envelope"></i> humbu@imperial.africa</span>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Humbu Wandeme Trading Enterprise · Imperial Omega Stack v2.4 · 62/62 ports steady state · DSVW hardened & monitored
+  </footer>
+</div>
+</body>
+      </html>
